@@ -22,7 +22,7 @@ then
   docker exec -it -u root frappe bash -c "apt-get install vim && apt-get install sudo && usermod -aG sudo frappe && printf '# User rules for frappe\nfrappe ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/frappe"
   docker exec -it frappe bash -c "bench set-mariadb-host mariadb"
   docker exec -it frappe bash -c "bench new-site site1.local"
-  docker exec -it frappe bash -c "bench get-app erpnext"
+  docker exec -it frappe bash -c "bench get-app erpnext https://github.com/frappe/erpnext"
   docker exec -it frappe bash -c "bench --site site1.local install-app erpnext"
 
 else
